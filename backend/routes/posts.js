@@ -1,4 +1,5 @@
 const express = require('express');
+const Post = require('../models/postModel');
 
 const router = express.Router();
 
@@ -13,8 +14,17 @@ router.get('/:id', (req, res) => {
 });
 
 // POST / CREATE a new post
-router.post('/', (req, res) => {
-  res.json({ msg: 'POST a new post' });
+// router.post('/', (req, res) => {
+router.post('/', async (req, res) => {
+  // res.json({ msg: 'POST a new post' });
+  const { title, caption, likes } = req.body;
+
+  try {
+    const post = await Post.create({ title, caption, likes });
+    res.status(200).json(post);
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
 });
 
 // DELETE a post
