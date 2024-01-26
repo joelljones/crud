@@ -2,42 +2,34 @@ const express = require('express');
 
 const app = express();
 
+const mongoose = require('mongoose');
+
 require('dotenv').config();
+
+const postsRoutes = require('./routes/posts');
 
 // middleware
 app.use(express.json());
 
+// log each request path & response method
 app.use((req, res, next) => {
   console.log(req.path, req.method);
   next();
 });
 
 // routes
-// // GET / READ
-// app.get('/', (req, res) => {
-//   // do something here
-// });
+app.use('/api/posts', postsRoutes);
 
-// // POST / CREATE
-// app.post('/', (req, res) => {
-//   // do something here
-// });
-
-// // PATCH / UPDATE ONE
-// app.patch('/', (req, res) => {
-//   // do something here
-// });
-
-// // PUT / UPDATE ALL
-// app.put('/', (req, res) => {
-//   // do something here
-// });
-
-// // DELETE
-// app.delete('/', (req, res) => {
-//   // do something here
-// });
-
-app.listen(process.env.PORT, () => {
-  console.log(`Server listening on port ${process.env.PORT}`);
-});
+// connect to db
+mongoose
+  .connect(process.env.URI)
+  .then(() => {
+    console.log('You successfully connected to MongoDB!');
+    // listen to port
+    app.listen(process.env.PORT, () => {
+      console.log(`Server listening on port ${process.env.PORT}`);
+    });
+  })
+  .catch((err) => {
+    console.log(err);
+  });
