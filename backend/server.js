@@ -8,8 +8,11 @@ require('dotenv').config();
 
 const postsRoutes = require('./routes/posts');
 
+const cors = require('cors');
+
 // middleware
 app.use(express.json());
+app.use(cors());
 
 // log each request path & response method
 app.use((req, res, next) => {
