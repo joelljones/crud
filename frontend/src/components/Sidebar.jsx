@@ -46,7 +46,7 @@ const Sidebar = () => {
         <div className="flex flex-col h-full">
           {/* TITLE / LOGO */}
           <div className="h-20 flex items-center justify-center px-8 md:text-5xl lg:text-6xl">
-            <a href="javascript:void(0)" className="text-white">
+            <a href="javascript:void(0)" className="text-gray-light-txt">
               {/* <img
                 src="https://floatui.com/logo.svg"
                 width={140}
@@ -63,7 +63,7 @@ const Sidebar = () => {
                 <li key={idx}>
                   <a
                     href={item.href}
-                    className="flex items-center gap-x-2 text-white p-2 rounded-lg  hover:bg-gray-light-hover active:bg-gray-light-hover duration-150"
+                    className="flex items-center gap-x-2 text-gray-med-txt p-2 rounded-lg  hover:bg-gray-light-hvr active:bg-gray-light-hvr duration-150"
                   >
                     <div className="mt-1">{item.icon}</div>
                     {item.name}
@@ -78,7 +78,7 @@ const Sidebar = () => {
                   <li key={idx}>
                     <a
                       href={item.href}
-                      className="flex items-center gap-x-2 text-white p-2 rounded-lg  hover:bg-gray-light-hover active:bg-gray-light-hover duration-150"
+                      className="flex items-center gap-x-2 text-gray-med-txt p-2 rounded-lg  hover:bg-gray-light-hvr active:bg-gray-light-hvr duration-150"
                     >
                       {item.icon}
                       {item.name}

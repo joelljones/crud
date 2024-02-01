@@ -4,10 +4,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        'gray-dark': '#18191a',
-        'gray-med': '#242526',
         'gray-light': '#3a3b3c',
-        'gray-light-hover': '#4e4f50',
+        'gray-med': '#242526',
+        'gray-dark': '#18191a',
+        'gray-light-txt': '#e4e6eb',
+        'gray-med-txt': '#b0b3b8',
+        'gray-light-hvr': '#4e4f50',
       },
     },
   },

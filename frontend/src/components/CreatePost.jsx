@@ -22,7 +22,7 @@ export default function CreatePost() {
         <button
           type="button"
           onClick={openModal}
-          className="rounded-full bg-gray-light px-4 py-2 text-sm font-medium text-white hover:bg-gray-light-hover focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75 w-full text-left h-10"
+          className="rounded-full bg-gray-light px-4 py-2 text-sm font-medium text-gray-med-txt hover:bg-gray-light-hvr focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75 w-full text-left h-10"
         >
           Write something...
         </button>
@@ -59,7 +59,7 @@ export default function CreatePost() {
                     <div className="flex-grow flex items-center justify-center">
                       <Dialog.Title
                         as="h3"
-                        className="text-xl font-bold leading-6 text-white text-center"
+                        className="text-xl font-bold leading-6 text-gray-light-txt text-center"
                       >
                         Create post
                       </Dialog.Title>
@@ -73,7 +73,7 @@ export default function CreatePost() {
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 24 24"
                         fill="#3a3b3c"
-                        className="w-9 h-9 rounded-full hover:bg-gray-light-hover"
+                        className="w-9 h-9 rounded-full hover:bg-gray-light-hvr"
                       >
                         <path
                           fillRule="evenodd"
@@ -89,7 +89,7 @@ export default function CreatePost() {
                     name=""
                     id=""
                     required="true"
-                    className="w-full bg-gray-med p-4 text-2xl outline-none resize-none"
+                    className="w-full bg-gray-med p-4 text-2xl outline-none resize-none text-gray-light-txt"
                     placeholder="Write something..."
                   ></textarea>
 
@@ -98,7 +98,7 @@ export default function CreatePost() {
                     <button
                       type="button"
                       onClick={closeModal}
-                      className="rounded-md bg-[#505151] px-4 py-2 text-[15px] font-medium text-[#ffffff4d] hover:bg-gray-light-hover focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75 w-full text-center h-10"
+                      className="rounded-md bg-[#505151] px-4 py-2 text-[15px] font-medium text-[#ffffff4d] hover:bg-gray-light-hvr focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75 w-full text-center h-10"
                     >
                       Post
                     </button>

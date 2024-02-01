@@ -4,9 +4,13 @@ const Schema = mongoose.Schema;
 
 const postSchema = new Schema(
   {
-    title: {
-      type: String,
-      required: true,
+    // title: {
+    //   type: String,
+    //   required: true,
+    // },
+    user: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'User',
     },
     // image: {
     //   type: String,
@@ -20,9 +24,9 @@ const postSchema = new Schema(
       type: Number,
       required: true,
     },
-    user: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'User',
+    comments: {
+      type: Number,
+      required: true,
     },
   },
   { timestamps: true }
