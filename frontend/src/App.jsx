@@ -2,6 +2,7 @@
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
 // import './App.css';
+import CreatePost from './components/CreatePost';
 import Posts from './components/Posts';
 import Sidebar from './components/Sidebar';
 
@@ -10,9 +11,12 @@ function App() {
 
   return (
     <>
-      <div className="flex w-[908px] px-4 justify-center">
+      <div className="flex w-screen md:w-full px-4 justify-center">
         <Sidebar />
-        <Posts />
+        <div className="flex flex-col md:w-[500px] lg:w-[672px] m-2 space-y-4">
+          <CreatePost />
+          <Posts />
+        </div>
       </div>
       {/* <div>
         <a href="https://vitejs.dev" target="_blank">

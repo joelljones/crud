@@ -19,8 +19,8 @@ const Posts = () => {
   }, []);
 
   return (
-    <section className="w-[500px] m-2">
-      <ul className="mt-12 space-y-6">
+    <section>
+      <ul className="space-y-4">
         {posts &&
           posts.map((post) => <PostDetails post={post} key={post._id} />)}
       </ul>

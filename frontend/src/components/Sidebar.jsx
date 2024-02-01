@@ -42,10 +42,11 @@ const Sidebar = () => {
 
   return (
     <>
-      <nav className="h-screen w-[360px] mx-2 bg-white space-y-8">
+      <nav className="h-screen md:w-[250px] lg:w-[336px] bg-gray-med space-y-8">
         <div className="flex flex-col h-full">
-          <div className="h-20 flex items-center justify-center px-8 text-6xl">
-            <a href="javascript:void(0)" className="text-gray-600">
+          {/* TITLE / LOGO */}
+          <div className="h-20 flex items-center justify-center px-8 md:text-5xl lg:text-6xl">
+            <a href="javascript:void(0)" className="text-white">
               {/* <img
                 src="https://floatui.com/logo.svg"
                 width={140}
@@ -54,29 +55,32 @@ const Sidebar = () => {
               Passport
             </a>
           </div>
+
           <div className="flex-1 flex flex-col h-full overflow-auto">
-            <ul className="px-4 text-sm font-medium flex-1">
+            {/* LOCATIONS */}
+            <ul className="mt-4 px-4 text-sm font-medium flex-1">
               {navTop.map((item, idx) => (
                 <li key={idx}>
                   <a
                     href={item.href}
-                    className="flex items-center gap-x-2 text-gray-600 p-2 rounded-lg  hover:bg-gray-50 active:bg-gray-100 duration-150"
+                    className="flex items-center gap-x-2 text-white p-2 rounded-lg  hover:bg-gray-light-hover active:bg-gray-light-hover duration-150"
                   >
-                    <div className="text-gray-500 mt-1">{item.icon}</div>
+                    <div className="mt-1">{item.icon}</div>
                     {item.name}
                   </a>
                 </li>
               ))}
             </ul>
             <div>
+              {/* LOGOUT */}
               <ul className="px-4 pb-4 text-sm font-medium">
                 {navBottom.map((item, idx) => (
                   <li key={idx}>
                     <a
                       href={item.href}
-                      className="flex items-center gap-x-2 text-gray-600 p-2 rounded-lg  hover:bg-gray-50 active:bg-gray-100 duration-150"
+                      className="flex items-center gap-x-2 text-white p-2 rounded-lg  hover:bg-gray-light-hover active:bg-gray-light-hover duration-150"
                     >
-                      <div className="text-gray-500">{item.icon}</div>
+                      {item.icon}
                       {item.name}
                     </a>
                   </li>
