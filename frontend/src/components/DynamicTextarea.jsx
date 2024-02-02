@@ -19,7 +19,7 @@ const DynamicTextarea = React.forwardRef((props, ref) => {
       ref={ref}
       {...props}
       style={{ minHeight }} // Set the minHeight inline style
-      className="overflow-y-hidden rounded-full bg-gray-light px-4 py-2 text-sm font-medium text-gray-med-txt hover:bg-gray-light-hvr focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75 w-full text-left resize-none h-9"
+      className="overflow-y-hidden rounded-full bg-gray-light px-4 py-2 text-sm font-medium text-gray-med-txt focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75 w-full text-left resize-none h-9"
       value={value}
       onChange={handleChange}
       placeholder="Write a comment..."

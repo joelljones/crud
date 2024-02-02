@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react';
 import DynamicTextarea from './DynamicTextarea';
+import MenuEditDelete from './MenuEditDelete';
 
 export default ({ post }) => {
   const [likes, setLikes] = useState(post.likes); // initialize likes from post data
@@ -67,7 +68,7 @@ export default ({ post }) => {
     <li
       post={post}
       key={post._id}
-      className="p-5 pb-2 bg-gray-med rounded-md shadow-sm"
+      className="p-5 pb-2 bg-gray-med rounded-md shadow-sm relative"
     >
       {/* AVATAR,USERNAME & CREATED AT */}
       <div className="flex items-center gap-x-2 text-[15px] text-gray-med-txt">
@@ -83,6 +84,9 @@ export default ({ post }) => {
           {post.createdAt}
         </div>
       </div>
+
+      {/* EDIT / DELETE MENU */}
+      <MenuEditDelete post={post} />
 
       {/* POST & IMAGE */}
       <div className="justify-between sm:flex p-4">
