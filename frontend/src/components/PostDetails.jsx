@@ -1,11 +1,66 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
+import DynamicTextarea from './DynamicTextarea';
 
 export default ({ post }) => {
+  const [likes, setLikes] = useState(post.likes); // initialize likes from post data
+  const [comments, setComments] = useState(post.comments); // initialize comments from post data
+  const [error, setError] = useState(null);
+
   // focus on the comment textarea when the comment button is clicked
   const inputRef = useRef(null);
 
   const handleClick = () => {
     inputRef.current.focus();
+  };
+
+  // HANDLE LIKES
+  const handleLikesSubmit = async (e) => {
+    e.preventDefault();
+
+    const updatedLikes = likes + 1;
+
+    const res = await fetch('http://localhost:3000/api/posts/' + post._id, {
+      method: 'PATCH',
+      body: JSON.stringify({ likes: updatedLikes }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    const json = await res.json();
+
+    if (!res.ok) {
+      setError(json.error);
+    }
+    if (res.ok) {
+      setError(null);
+      setLikes(updatedLikes);
+      console.log('New like added:', json);
+    }
+  };
+
+  // HANDLE COMMENTS
+  const handleCommentsSubmit = async (e) => {
+    e.preventDefault();
+
+    const updatedComments = likes + 1;
+
+    const res = await fetch('http://localhost:3000/api/posts/' + post._id, {
+      method: 'PATCH',
+      body: JSON.stringify({ comments: updatedComments }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    const json = await res.json();
+
+    if (!res.ok) {
+      setError(json.error);
+    }
+    if (res.ok) {
+      setError(null);
+      setLikes(updatedComments);
+      console.log('New comment added:', json);
+    }
   };
 
   return (
@@ -77,23 +132,31 @@ export default ({ post }) => {
       {/* ADD LIKE &/OR COMMENT */}
       <div className="flex border-b border-gray-light text-gray-med-txt">
         {/* LIKE */}
-        <button className="flex gap-2 bg-transparent w-1/2 justify-center hover:bg-gray-light">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className="w-6 h-6"
+        <form
+          onSubmit={handleLikesSubmit}
+          className="flex w-1/2 justify-center"
+        >
+          <button
+            type="submit"
+            className="flex w-full justify-center gap-2 bg-transparent hover:bg-gray-light"
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M6.633 10.25c.806 0 1.533-.446 2.031-1.08a9.041 9.041 0 0 1 2.861-2.4c.723-.384 1.35-.956 1.653-1.715a4.498 4.498 0 0 0 .322-1.672V2.75a.75.75 0 0 1 .75-.75 2.25 2.25 0 0 1 2.25 2.25c0 1.152-.26 2.243-.723 3.218-.266.558.107 1.282.725 1.282m0 0h3.126c1.026 0 1.945.694 2.054 1.715.045.422.068.85.068 1.285a11.95 11.95 0 0 1-2.649 7.521c-.388.482-.987.729-1.605.729H13.48c-.483 0-.964-.078-1.423-.23l-3.114-1.04a4.501 4.501 0 0 0-1.423-.23H5.904m10.598-9.75H14.25M5.904 18.5c.083.205.173.405.27.602.197.4-.078.898-.523.898h-.908c-.889 0-1.713-.518-1.972-1.368a12 12 0 0 1-.521-3.507c0-1.553.295-3.036.831-4.398C3.387 9.953 4.167 9.5 5 9.5h1.053c.472 0 .745.556.5.96a8.958 8.958 0 0 0-1.302 4.665c0 1.194.232 2.333.654 3.375Z"
-            />
-          </svg>
-          <span>Like</span>
-        </button>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="w-6 h-6"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M6.633 10.25c.806 0 1.533-.446 2.031-1.08a9.041 9.041 0 0 1 2.861-2.4c.723-.384 1.35-.956 1.653-1.715a4.498 4.498 0 0 0 .322-1.672V2.75a.75.75 0 0 1 .75-.75 2.25 2.25 0 0 1 2.25 2.25c0 1.152-.26 2.243-.723 3.218-.266.558.107 1.282.725 1.282m0 0h3.126c1.026 0 1.945.694 2.054 1.715.045.422.068.85.068 1.285a11.95 11.95 0 0 1-2.649 7.521c-.388.482-.987.729-1.605.729H13.48c-.483 0-.964-.078-1.423-.23l-3.114-1.04a4.501 4.501 0 0 0-1.423-.23H5.904m10.598-9.75H14.25M5.904 18.5c.083.205.173.405.27.602.197.4-.078.898-.523.898h-.908c-.889 0-1.713-.518-1.972-1.368a12 12 0 0 1-.521-3.507c0-1.553.295-3.036.831-4.398C3.387 9.953 4.167 9.5 5 9.5h1.053c.472 0 .745.556.5.96a8.958 8.958 0 0 0-1.302 4.665c0 1.194.232 2.333.654 3.375Z"
+              />
+            </svg>
+            <span>Like</span>
+          </button>
+        </form>
 
         {/* COMMENT */}
         <button
@@ -125,7 +188,9 @@ export default ({ post }) => {
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/1200px-Default_pfp.svg.png"
           className="w-9 h-9 rounded-full bg-white"
         />
-        <textarea
+        {/* AUTO INCREASE INPUT HEIGHT TO FIT TEXT */}
+        <DynamicTextarea ref={inputRef} />
+        {/* <textarea
           name=""
           id=""
           // required="true"
@@ -134,7 +199,7 @@ export default ({ post }) => {
           ref={inputRef}
           placeholder="Write a comment..."
           className="rounded-full bg-gray-light px-4 py-2 text-sm font-medium text-gray-med-txt hover:bg-gray-light-hvr focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75 w-full text-left h-9 resize-none"
-        ></textarea>
+        ></textarea> */}
       </div>
     </li>
   );

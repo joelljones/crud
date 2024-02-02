@@ -22,11 +22,11 @@ const postSchema = new Schema(
     },
     likes: {
       type: Number,
-      required: true,
+      // required: true,
     },
     comments: {
       type: Number,
-      required: true,
+      // required: true,
     },
   },
   { timestamps: true }

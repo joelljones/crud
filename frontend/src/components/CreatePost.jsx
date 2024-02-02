@@ -39,7 +39,7 @@ export default function CreatePost() {
       setCaption('');
       setLikes('0');
       setComments('0');
-      console.log('new post added:', json);
+      console.log('New post added:', json);
       // CLOSE MODAL HERE TO PREVENT CLOSE ON SUBMIT WHEN ERROR IS PRESENT
       closeModal();
     }
