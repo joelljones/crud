@@ -1,4 +1,13 @@
+import { useRef } from 'react';
+
 export default ({ post }) => {
+  // focus on the comment textarea when the comment button is clicked
+  const inputRef = useRef(null);
+
+  const handleClick = () => {
+    inputRef.current.focus();
+  };
+
   return (
     <li
       post={post}
@@ -41,14 +50,14 @@ export default ({ post }) => {
             >
               <path d="M1 8.25a1.25 1.25 0 1 1 2.5 0v7.5a1.25 1.25 0 1 1-2.5 0v-7.5ZM11 3V1.7c0-.268.14-.526.395-.607A2 2 0 0 1 14 3c0 .995-.182 1.948-.514 2.826-.204.54.166 1.174.744 1.174h2.52c1.243 0 2.261 1.01 2.146 2.247a23.864 23.864 0 0 1-1.341 5.974C17.153 16.323 16.072 17 14.9 17h-3.192a3 3 0 0 1-1.341-.317l-2.734-1.366A3 3 0 0 0 6.292 15H5V8h.963c.685 0 1.258-.483 1.612-1.068a4.011 4.011 0 0 1 2.166-1.73c.432-.143.853-.386 1.011-.814.16-.432.248-.9.248-1.388Z" />
             </svg>
-            {post.likes}
+            {post.likes !== 0 && post.likes}
           </span>
         </div>
 
         {/* COMMENT COUNT & ICON */}
         <div className="items-center space-y-4 text-sm sm:flex sm:space-x-4 sm:space-y-0">
           <span className="flex items-center">
-            {post.comments}
+            {post.comments !== 0 && post.comments}
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 20 20"
@@ -87,7 +96,11 @@ export default ({ post }) => {
         </button>
 
         {/* COMMENT */}
-        <button className="flex gap-2 bg-transparent w-1/2 justify-center hover:bg-gray-light">
+        <button
+          // focus on the comment textarea when the comment button is clicked
+          onClick={handleClick}
+          className="flex gap-2 bg-transparent w-1/2 justify-center hover:bg-gray-light"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -115,7 +128,10 @@ export default ({ post }) => {
         <textarea
           name=""
           id=""
-          required="true"
+          // required="true"
+          type="text"
+          // focus on the comment textarea when the comment button is clicked
+          ref={inputRef}
           placeholder="Write a comment..."
           className="rounded-full bg-gray-light px-4 py-2 text-sm font-medium text-gray-med-txt hover:bg-gray-light-hvr focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75 w-full text-left h-9 resize-none"
         ></textarea>

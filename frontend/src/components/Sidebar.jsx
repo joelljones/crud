@@ -1,17 +1,17 @@
 const Sidebar = () => {
   const navTop = [
     {
-      href: 'javascript:void(0)',
+      // href: 'javascript:void(0)',
       name: 'Canada',
       icon: '🇨🇦',
     },
     {
-      href: 'javascript:void(0)',
+      href: '',
       name: 'United States',
       icon: '🇺🇸',
     },
     {
-      href: 'javascript:void(0)',
+      href: '',
       name: 'Mexico',
       icon: '🇲🇽',
     },
@@ -19,7 +19,7 @@ const Sidebar = () => {
 
   const navBottom = [
     {
-      href: 'javascript:void(0)',
+      href: '',
       name: 'Logout',
       icon: (
         <svg
@@ -46,7 +46,7 @@ const Sidebar = () => {
         <div className="flex flex-col h-full">
           {/* TITLE / LOGO */}
           <div className="h-20 flex items-center justify-center px-8 md:text-5xl lg:text-6xl">
-            <a href="javascript:void(0)" className="text-gray-light-txt">
+            <a href="" className="text-gray-light-txt">
               {/* <img
                 src="https://floatui.com/logo.svg"
                 width={140}
@@ -98,7 +98,7 @@ const Sidebar = () => {
                       Alivika tony
                     </span>
                     <a
-                      href="javascript:void(0)"
+                      href=""
                       className="block mt-px text-gray-600 hover:text-indigo-600 text-xs"
                     >
                       View profile

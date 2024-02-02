@@ -11,9 +11,9 @@ function App() {
 
   return (
     <>
-      <div className="flex w-screen md:w-full px-4 justify-center">
+      <div className="flex w-screen md:w-full px-4 justify-center h-screen overflow-hidden">
         <Sidebar />
-        <div className="flex flex-col md:w-[500px] lg:w-[672px] m-2 space-y-4">
+        <div className="flex flex-col md:w-[500px] lg:w-[672px] m-2 space-y-4 overflow-y-auto">
           <CreatePost />
           <Posts />
         </div>
