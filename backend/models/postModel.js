@@ -4,10 +4,6 @@ const Schema = mongoose.Schema;
 
 const postSchema = new Schema(
   {
-    // title: {
-    //   type: String,
-    //   required: true,
-    // },
     user: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'User',
@@ -22,11 +18,11 @@ const postSchema = new Schema(
     },
     likes: {
       type: Number,
-      // required: true,
+      required: true,
     },
     comments: {
       type: Number,
-      // required: true,
+      required: true,
     },
   },
   { timestamps: true }
