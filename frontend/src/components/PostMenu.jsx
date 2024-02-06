@@ -2,10 +2,11 @@ import { Dialog, Menu, Transition } from '@headlessui/react';
 import { Fragment, useState } from 'react';
 import ErrorAlert from './ErrorAlert.jsx';
 
-export default function MenuEditDelete({ post }) {
+export default function PostMenu({ post }) {
   let [isOpen, setIsOpen] = useState(false);
-  const [caption, setCaption] = useState('');
+  const [caption, setCaption] = useState(post.caption);
   const [error, setError] = useState(null);
+
   function closeModal() {
     setIsOpen(false);
   }
@@ -33,11 +34,10 @@ export default function MenuEditDelete({ post }) {
       setError(json.error);
     }
     if (res.ok) {
-      setError(null);
       setCaption('');
+      setError(null);
       console.log('Post edited:', json);
-      // CLOSE MODAL HERE TO PREVENT CLOSE ON SUBMIT WHEN ERROR IS PRESENT
-      closeModal();
+      closeModal(); // close modal here to prevent close on submit when error is present
     }
   };
 
@@ -196,21 +196,17 @@ export default function MenuEditDelete({ post }) {
 
                     {/* TEXTAREA */}
                     <textarea
-                      // name=""
-                      // id=""
-                      // required="true"
                       className="w-full bg-gray-med p-4 text-2xl outline-none resize-none text-gray-light-txt"
                       placeholder="Write something..."
                       type="text"
                       onChange={(e) => setCaption(e.target.value)}
-                      value={caption || post.caption}
+                      value={caption}
                     ></textarea>
 
                     {/* POST BUTTON */}
                     <div className="absolute bottom-0 w-full p-3">
                       <button
                         type="submit"
-                        // onClick={closeModal}
                         className="rounded-md bg-[#505151] px-4 py-2 text-[15px] font-medium text-[#ffffff4d] hover:bg-gray-light-hvr focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75 w-full text-center h-10"
                       >
                         Post

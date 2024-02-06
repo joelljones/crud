@@ -4,9 +4,9 @@ import ErrorAlert from './ErrorAlert.jsx';
 
 export default function CreatePost() {
   let [isOpen, setIsOpen] = useState(false);
-  const [caption, setCaption] = useState('');
-  const [likes, setLikes] = useState('0');
-  const [comments, setComments] = useState('0');
+  const [caption, setCaption] = useState();
+  const [likes, setLikes] = useState(0);
+  const [comments, setComments] = useState();
   const [error, setError] = useState(null);
 
   function closeModal() {
@@ -35,13 +35,12 @@ export default function CreatePost() {
       setError(json.error);
     }
     if (res.ok) {
+      setCaption();
+      setLikes(0);
+      setComments();
       setError(null);
-      setCaption('');
-      setLikes('0');
-      setComments('0');
       console.log('New post added:', json);
-      // CLOSE MODAL HERE TO PREVENT CLOSE ON SUBMIT WHEN ERROR IS PRESENT
-      closeModal();
+      closeModal(); // close modal here to prevent close on submit when error is present
     }
   };
 
@@ -120,9 +119,6 @@ export default function CreatePost() {
 
                     {/* TEXTAREA */}
                     <textarea
-                      // name=""
-                      // id=""
-                      // required="true"
                       className="w-full bg-gray-med p-4 text-2xl outline-none resize-none text-gray-light-txt"
                       placeholder="Write something..."
                       type="text"
@@ -134,7 +130,6 @@ export default function CreatePost() {
                     <div className="absolute bottom-0 w-full p-3">
                       <button
                         type="submit"
-                        // onClick={closeModal}
                         className="rounded-md bg-[#505151] px-4 py-2 text-[15px] font-medium text-[#ffffff4d] hover:bg-gray-light-hvr focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75 w-full text-center h-10"
                       >
                         Post

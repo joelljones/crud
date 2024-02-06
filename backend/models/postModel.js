@@ -20,10 +20,22 @@ const postSchema = new Schema(
       type: Number,
       required: true,
     },
-    comments: {
-      type: Number,
-      required: true,
-    },
+    comments: [
+      {
+        text: {
+          type: String,
+          required: true,
+        },
+        user: {
+          type: mongoose.Schema.Types.ObjectId,
+          ref: 'User',
+        },
+        createdAt: {
+          type: Date,
+          default: Date.now,
+        },
+      },
+    ],
   },
   { timestamps: true }
 );
