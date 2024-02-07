@@ -2,7 +2,7 @@ export default ({ error }) => {
   return (
     <div
       error={error}
-      className="mt-4 mx-4 px-4 rounded-md border-l-4 border-red-500 bg-red-50 md:max-w-2xl md:mx-auto md:px-8"
+      className="mt-4 rounded-md border-l-4 border-red-500 bg-red-50 max-w-2xl mx-auto px-8"
     >
       <div className="flex justify-between py-3">
         <div className="flex">

@@ -42,10 +42,10 @@ const Sidebar = () => {
 
   return (
     <>
-      <nav className="h-screen md:w-[250px] lg:w-[336px] bg-gray-med space-y-8">
+      <nav className="h-screen w-[250px] lg:w-[336px] bg-gray-med space-y-8">
         <div className="flex flex-col h-full">
           {/* TITLE / LOGO */}
-          <div className="h-20 flex items-center justify-center px-8 md:text-5xl lg:text-6xl">
+          <div className="h-20 flex items-center justify-center px-8 text-5xl lg:text-6xl">
             <a href="" className="text-gray-light-txt">
               {/* <img
                 src=""

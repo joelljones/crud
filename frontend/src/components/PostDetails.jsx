@@ -3,6 +3,9 @@ import CommentDetails from './CommentDetails';
 import CreateComment from './CreateComment';
 import PostMenu from './PostMenu';
 
+// date-fns
+import formatDistanceToNow from 'date-fns/formatDistanceToNow';
+
 export default ({ post }) => {
   const [likes, setLikes] = useState(post.likes); // initialize likes from post data
   const [comments, setComments] = useState(post.comments); // initialize comments from post data
@@ -54,7 +57,7 @@ export default ({ post }) => {
         {/* USERNAME & CREATED AT */}
         <div className="flex flex-col">
           {/* <span>Username</span> */}
-          {post.createdAt}
+          {formatDistanceToNow(new Date(post.createdAt), { addSuffix: true })}
         </div>
       </div>
 
@@ -62,7 +65,7 @@ export default ({ post }) => {
       <PostMenu post={post} />
 
       {/* POST & IMAGE */}
-      <div className="justify-between sm:flex p-4">
+      <div className="justify-between flex p-4">
         <div className="flex-1">
           <p className="text-gray-light-txt pr-2">{post.caption}</p>
           {/* <img src="" alt="" /> */}
@@ -72,7 +75,7 @@ export default ({ post }) => {
       {/* LIKE & COMMENT COUNT */}
       <div className="flex justify-between pb-2 border-b border-gray-light text-gray-med-txt">
         {/* LIKE ICON & COUNT */}
-        <div className="items-center space-y-4 text-sm sm:flex sm:space-x-4 sm:space-y-0">
+        <div className="items-center text-sm flex space-x-4">
           <span className="flex items-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -87,7 +90,7 @@ export default ({ post }) => {
         </div>
 
         {/* COMMENT COUNT & ICON */}
-        <div className="items-center space-y-4 text-sm sm:flex sm:space-x-4 sm:space-y-0">
+        <div className="items-center text-sm flex space-x-4">
           <span className="flex items-center">
             {post.comments.length !== 0 && post.comments.length}
             <svg
