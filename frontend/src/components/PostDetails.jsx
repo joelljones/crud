@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react';
+import CommentDetails from './CommentDetails';
 import CreateComment from './CreateComment';
 import PostMenu from './PostMenu';
 
@@ -40,7 +41,6 @@ export default ({ post }) => {
   return (
     <li
       post={post}
-      key={post._id}
       className="p-5 pb-2 bg-gray-med rounded-md shadow-sm relative"
     >
       {/* AVATAR,USERNAME & CREATED AT */}
@@ -154,11 +154,21 @@ export default ({ post }) => {
         </button>
       </div>
 
+      {/* COMMENTS / REPLIES */}
+      <section>
+        <ul className="space-y-3 py-3">
+          {comments &&
+            comments.map((comment) => (
+              <CommentDetails key={comment._id} post={post} comment={comment} />
+            ))}
+        </ul>
+      </section>
+
       {/* CREATE COMMENT */}
-      <div className="flex items-center justify-center gap-x-2 border border-transparent rounded-lg bg-gray-med mt-2">
+      <div className="flex items-center justify-center gap-x-2 border border-transparent rounded-lg bg-gray-med ml-[-1px]">
         <img
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/1200px-Default_pfp.svg.png"
-          className="w-9 h-9 rounded-full bg-white"
+          className="w-8 h-8 rounded-full bg-white"
         />
         {/* AUTO INCREASE INPUT HEIGHT TO FIT TEXT */}
         <CreateComment ref={inputRef} post={post} />

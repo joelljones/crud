@@ -1,7 +1,7 @@
 const Sidebar = () => {
   const navTop = [
     {
-      // href: 'javascript:void(0)',
+      href: '',
       name: 'Canada',
       icon: '🇨🇦',
     },
@@ -48,7 +48,7 @@ const Sidebar = () => {
           <div className="h-20 flex items-center justify-center px-8 md:text-5xl lg:text-6xl">
             <a href="" className="text-gray-light-txt">
               {/* <img
-                src="https://floatui.com/logo.svg"
+                src=""
                 width={140}
                 className="mx-auto"
               /> */}
@@ -71,8 +71,9 @@ const Sidebar = () => {
                 </li>
               ))}
             </ul>
+
+            {/* LOGOUT */}
             <div>
-              {/* LOGOUT */}
               <ul className="px-4 pb-4 text-sm font-medium">
                 {navBottom.map((item, idx) => (
                   <li key={idx}>
@@ -86,26 +87,6 @@ const Sidebar = () => {
                   </li>
                 ))}
               </ul>
-              {/* <div className="py-4 px-4 border-t">
-                <div className="flex items-center gap-x-4">
-                  <img
-                    // src="https://randomuser.me/api/portraits/women/79.jpg"
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/1200px-Default_pfp.svg.png"
-                    className="w-12 h-12 rounded-full"
-                  />
-                  <div>
-                    <span className="block text-gray-700 text-sm font-semibold">
-                      Alivika tony
-                    </span>
-                    <a
-                      href=""
-                      className="block mt-px text-gray-600 hover:text-indigo-600 text-xs"
-                    >
-                      View profile
-                    </a>
-                  </div>
-                </div>
-              </div> */}
             </div>
           </div>
         </div>
