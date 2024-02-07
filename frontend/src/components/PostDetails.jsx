@@ -17,13 +17,16 @@ export default ({ post }) => {
   const handleLikesClick = async () => {
     const updatedLikes = likes + 1;
 
-    const res = await fetch('http://localhost:3000/api/posts/' + post._id, {
-      method: 'PATCH',
-      body: JSON.stringify({ likes: updatedLikes }),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
+    const res = await fetch(
+      'http://crud-mern.up.railway.app/api/posts/' + post._id,
+      {
+        method: 'PATCH',
+        body: JSON.stringify({ likes: updatedLikes }),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      }
+    );
     const json = await res.json();
 
     if (!res.ok) {

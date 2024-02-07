@@ -22,7 +22,7 @@ export default function CommentMenu({ post, comment }) {
     const updatedText = text;
 
     const res = await fetch(
-      'http://localhost:3000/api/posts/' +
+      'http://crud-mern.up.railway.app/api/posts/' +
         post._id +
         '/comments/' +
         comment._id,
@@ -50,7 +50,7 @@ export default function CommentMenu({ post, comment }) {
   // HANDLE DELETE
   const handleDeleteClick = async () => {
     const res = await fetch(
-      'http://localhost:3000/api/posts/' +
+      'http://crud-mern.up.railway.app/api/posts/' +
         post._id +
         '/comments/' +
         comment._id,
