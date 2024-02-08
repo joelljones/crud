@@ -18,7 +18,7 @@ export default ({ post }) => {
     const updatedLikes = likes + 1;
 
     const res = await fetch(
-      'http://crud-mern.up.railway.app/api/posts/' + post._id,
+      'https://crud-mern.up.railway.app/api/posts/' + post._id,
       {
         method: 'PATCH',
         body: JSON.stringify({ likes: updatedLikes }),

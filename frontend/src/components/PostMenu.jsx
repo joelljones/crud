@@ -22,7 +22,7 @@ export default function PostMenu({ post }) {
     const updatedCaption = caption;
 
     const res = await fetch(
-      'http://crud-mern.up.railway.app/api/posts/' + post._id,
+      'https://crud-mern.up.railway.app/api/posts/' + post._id,
       {
         method: 'PATCH',
         body: JSON.stringify({ caption: updatedCaption }),
@@ -47,7 +47,7 @@ export default function PostMenu({ post }) {
   // HANDLE DELETE
   const handleDeleteClick = async () => {
     const res = await fetch(
-      'http://crud-mern.up.railway.app/api/posts/' + post._id,
+      'https://crud-mern.up.railway.app/api/posts/' + post._id,
       {
         method: 'DELETE',
       }
