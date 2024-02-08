@@ -10,6 +10,16 @@ const postsRoutes = require('./routes/posts');
 
 const cors = require('cors');
 
+const path = require('path');
+
+// Serve static files from the 'frontend/build' directory
+app.use(express.static(path.join(__dirname, '../frontend/dist')));
+
+// Serve the React app for all routes
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../frontend/dist', 'index.html'));
+});
+
 // middleware
 app.use(express.json());
 app.use(cors());
