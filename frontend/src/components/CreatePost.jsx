@@ -22,7 +22,7 @@ export default function CreatePost() {
 
     const post = { caption, likes, comments };
 
-    const res = await fetch('http://localhost:3000/api/posts', {
+    const res = await fetch('https://crud-mern.up.railway.app/api/posts', {
       method: 'POST',
       body: JSON.stringify(post),
       headers: {
