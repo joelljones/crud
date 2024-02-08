@@ -10,26 +10,9 @@ const postsRoutes = require('./routes/posts');
 
 const cors = require('cors');
 
-const path = require('path');
-
-// Serve static files from the 'frontend/build' directory
-// app.use(express.static(path.join(__dirname, '../frontend/dist')));
-
-// Serve the React app for all routes
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../frontend/dist', 'index.html'));
-});
-
 // middleware
 app.use(express.json());
-// app.use(cors());
-app.use(
-  cors({
-    origin: 'http://localhost:3000', // Adjust this to match your frontend origin
-  })
-);
-
-app.options('*', cors()); // Enable preflight requests for all routes
+app.use(cors());
 
 // log each request path & response method
 app.use((req, res, next) => {

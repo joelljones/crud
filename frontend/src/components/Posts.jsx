@@ -7,7 +7,7 @@ const Posts = () => {
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const res = await fetch('https://crud-mern.up.railway.app/api/posts');
+      const res = await fetch('http://localhost:3000/api/posts');
       const json = await res.json();
 
       if (res.ok) {
