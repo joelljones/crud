@@ -22,7 +22,7 @@ export default function CreatePost() {
 
     const post = { caption, likes, comments };
 
-    const res = await fetch('https://crud-mern.up.railway.app/api/posts', {
+    const res = await fetch(import.meta.env.VITE_RAILWAY_URL + '/api/posts', {
       method: 'POST',
       body: JSON.stringify(post),
       headers: {

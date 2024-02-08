@@ -25,7 +25,8 @@ const CreateComment = React.forwardRef((props, ref) => {
     const newComment = comment;
 
     const res = await fetch(
-      'https://crud-mern.up.railway.app/api/posts/' +
+      import.meta.env.VITE_RAILWAY_URL +
+        '/api/posts/' +
         props.post._id +
         '/comments/',
       {

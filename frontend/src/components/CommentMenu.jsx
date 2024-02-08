@@ -22,7 +22,8 @@ export default function CommentMenu({ post, comment }) {
     const updatedText = text;
 
     const res = await fetch(
-      'https://crud-mern.up.railway.app/api/posts/' +
+      import.meta.env.VITE_RAILWAY_URL +
+        '/api/posts/' +
         post._id +
         '/comments/' +
         comment._id,
@@ -50,7 +51,8 @@ export default function CommentMenu({ post, comment }) {
   // HANDLE DELETE
   const handleDeleteClick = async () => {
     const res = await fetch(
-      'https://crud-mern.up.railway.app/api/posts/' +
+      import.meta.env.VITE_RAILWAY_URL +
+        '/api/posts/' +
         post._id +
         '/comments/' +
         comment._id,
