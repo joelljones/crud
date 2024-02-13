@@ -2,7 +2,7 @@
 
 A Facebook Groups clone - CRUD MERN app hosted on Railway - users can view, add, edit, & delete posts, replies/comments, & likes
 
-<!-- ![screenshot](screenshot.png) -->
+![screenshot](screenshot.png)
 
 **Link to project:** https://passport-travel.netlify.app
 
