@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react';
-import Avatar from './Avatar';
+// import Avatar from './Avatar';
 import CommentDetails from './CommentDetails';
 import CreateComment from './CreateComment';
 import PostMenu from './PostMenu';
@@ -53,13 +53,13 @@ export default ({ post }) => {
       {/* AVATAR,USERNAME & CREATED AT */}
       <div className="flex items-center gap-x-2 text-[15px] text-gray-med-txt">
         {/* AVATAR */}
-        {/* <img
+        <img
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/1200px-Default_pfp.svg.png"
           className="w-10 h-10 rounded-full bg-white"
-        /> */}
-        <div className="w-10 h-10">
+        />
+        {/* <div className="w-10 h-10">
           <Avatar />
-        </div>
+        </div> */}
 
         {/* USERNAME & CREATED AT */}
         <div className="flex flex-col">
