@@ -1,6 +1,6 @@
 # Passport Travel Group
 
-A Facebook Groups clone - CRUD MERN app hosted on Railway - users can view, add, edit & delete posts, replies/comments, & likes
+A Facebook Groups clone - CRUD MERN app hosted on Railway - users can view, add, edit, & delete posts, replies/comments, & likes
 
 <!-- ![screenshot](screenshot.png) -->
 

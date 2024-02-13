@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react';
+import Avatar from './Avatar';
 import CommentDetails from './CommentDetails';
 import CreateComment from './CreateComment';
 import PostMenu from './PostMenu';
@@ -52,10 +53,13 @@ export default ({ post }) => {
       {/* AVATAR,USERNAME & CREATED AT */}
       <div className="flex items-center gap-x-2 text-[15px] text-gray-med-txt">
         {/* AVATAR */}
-        <img
+        {/* <img
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/1200px-Default_pfp.svg.png"
           className="w-10 h-10 rounded-full bg-white"
-        />
+        /> */}
+        <div className="w-10 h-10">
+          <Avatar />
+        </div>
 
         {/* USERNAME & CREATED AT */}
         <div className="flex flex-col">
@@ -172,10 +176,17 @@ export default ({ post }) => {
 
       {/* CREATE COMMENT */}
       <div className="flex items-center justify-center gap-x-2 border border-transparent rounded-lg bg-gray-med ml-[-1px]">
-        <img
+        {/* <img
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/1200px-Default_pfp.svg.png"
           className="w-8 h-8 rounded-full bg-white"
+        /> */}
+        <img
+          src="https://randomuser.me/api/portraits/lego/8.jpg"
+          className="w-8 h-8 rounded-full"
         />
+        {/* <div className="w-8 h-8">
+          <Avatar />
+        </div> */}
         {/* AUTO INCREASE INPUT HEIGHT TO FIT TEXT */}
         <CreateComment ref={inputRef} post={post} />
       </div>

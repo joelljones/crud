@@ -1,5 +1,6 @@
 import { Dialog, Transition } from '@headlessui/react';
 import { Fragment, useState } from 'react';
+// import Avatar from './Avatar';
 import ErrorAlert from './ErrorAlert.jsx';
 
 export default function CreatePost() {
@@ -47,10 +48,17 @@ export default function CreatePost() {
   return (
     <>
       <div className="flex items-center justify-center gap-x-2 border border-transparent rounded-lg pt-3 px-4 pb-4 bg-gray-med">
-        <img
+        {/* <img
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/1200px-Default_pfp.svg.png"
           className="w-10 h-10 rounded-full bg-white"
+        /> */}
+        <img
+          src="https://randomuser.me/api/portraits/lego/8.jpg"
+          className="w-8 h-8 rounded-full"
         />
+        {/* <div className="w-10 h-10">
+          <Avatar />
+        </div> */}
         <button
           type="button"
           onClick={openModal}

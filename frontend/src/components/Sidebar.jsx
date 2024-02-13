@@ -2,6 +2,11 @@ const Sidebar = () => {
   const navTop = [
     {
       href: '',
+      name: 'General',
+      icon: '🌎',
+    },
+    {
+      href: '',
       name: 'Canada',
       icon: '🇨🇦',
     },
@@ -14,6 +19,146 @@ const Sidebar = () => {
       href: '',
       name: 'Mexico',
       icon: '🇲🇽',
+    },
+    {
+      href: '',
+      name: 'The Bahamas',
+      icon: '🇧🇸',
+    },
+    {
+      href: '',
+      name: 'Cuba',
+      icon: '🇨🇺',
+    },
+    // {
+    //   href: '',
+    //   name: 'Turks and Caicos',
+    //   icon: '🇹🇨',
+    // },
+    // {
+    //   href: '',
+    //   name: 'Cayman Islands',
+    //   icon: '🇰🇾',
+    // },
+    {
+      href: '',
+      name: 'Jamaica',
+      icon: '🇯🇲',
+    },
+    {
+      href: '',
+      name: 'Haiti',
+      icon: '🇭🇹',
+    },
+    {
+      href: '',
+      name: 'Dominican Republic',
+      icon: '🇩🇴',
+    },
+    {
+      href: '',
+      name: 'Puerto Rico',
+      icon: '🇵🇷',
+    },
+    {
+      href: '',
+      name: 'Belize',
+      icon: '🇧🇿',
+    },
+    {
+      href: '',
+      name: 'Guatemala',
+      icon: '🇬🇹',
+    },
+    {
+      href: '',
+      name: 'Honduras',
+      icon: '🇭🇳',
+    },
+    {
+      href: '',
+      name: 'El Salvador',
+      icon: '🇸🇻',
+    },
+    {
+      href: '',
+      name: 'Nicaragua',
+      icon: '🇳🇮',
+    },
+    {
+      href: '',
+      name: 'Costa Rica',
+      icon: '🇨🇷',
+    },
+    {
+      href: '',
+      name: 'Panama',
+      icon: '🇵🇦',
+    },
+    {
+      href: '',
+      name: 'Colombia',
+      icon: '🇨🇴',
+    },
+    {
+      href: '',
+      name: 'Venezuela',
+      icon: '🇻🇪',
+    },
+    {
+      href: '',
+      name: 'Guyana',
+      icon: '🇬🇾',
+    },
+    {
+      href: '',
+      name: 'Suriname',
+      icon: '🇸🇷',
+    },
+    {
+      href: '',
+      name: 'French Guiana',
+      icon: '🇬🇫',
+    },
+    {
+      href: '',
+      name: 'Brazil',
+      icon: '🇧🇷',
+    },
+    {
+      href: '',
+      name: 'Ecuador',
+      icon: '🇪🇨',
+    },
+    {
+      href: '',
+      name: 'Peru',
+      icon: '🇵🇪',
+    },
+    {
+      href: '',
+      name: 'Bolivia',
+      icon: '🇧🇴',
+    },
+    {
+      href: '',
+      name: 'Chile',
+      icon: '🇨🇱',
+    },
+    {
+      href: '',
+      name: 'Paraguay',
+      icon: '🇵🇾',
+    },
+    {
+      href: '',
+      name: 'Argentina',
+      icon: '🇦🇷',
+    },
+    {
+      href: '',
+      name: 'Uruguay',
+      icon: '🇺🇾',
     },
   ];
 
@@ -73,8 +218,8 @@ const Sidebar = () => {
             </ul>
 
             {/* LOGOUT */}
-            <div>
-              <ul className="px-4 pb-4 text-sm font-medium">
+            <div className="mt-4 border-t border-gray-light">
+              <ul className="p-4 text-sm font-medium">
                 {navBottom.map((item, idx) => (
                   <li key={idx}>
                     <a

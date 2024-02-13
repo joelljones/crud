@@ -1,3 +1,4 @@
+import Avatar from './Avatar';
 import CommentMenu from './CommentMenu';
 
 // date-fns
@@ -8,10 +9,13 @@ export default ({ post, comment }) => {
     <li comment={comment}>
       <div className="flex items-center text-[15px]">
         {/* AVATAR */}
-        <img
+        {/* <img
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/1200px-Default_pfp.svg.png"
           className="w-8 h-8 rounded-full bg-white mr-1.5"
-        />
+        /> */}
+        <div className="w-8 h-8 mr-1.5 flex justify-center">
+          <Avatar />
+        </div>
 
         {/* COMMENT */}
         <div className="justify-between flex bg-gray-light rounded-xl w-full py-2 px-3 mr-1">
