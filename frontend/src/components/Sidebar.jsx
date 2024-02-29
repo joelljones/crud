@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 const Sidebar = () => {
   const navTop = [
     {
@@ -185,12 +187,14 @@ const Sidebar = () => {
     },
   ];
 
+  const [state, setState] = useState(false);
+
   return (
     <>
-      <nav className="h-screen w-[250px] lg:w-[336px] bg-gray-med space-y-8">
+      <nav className="mx-[-16px] sm:mx-0 sm:h-screen sm:w-[250px] lg:w-[336px] bg-gray-med space-y-8">
         <div className="flex flex-col h-full">
           {/* TITLE / LOGO */}
-          <div className="h-20 flex items-center justify-center px-8 text-5xl lg:text-6xl">
+          <div className="h-20 flex items-center justify-between px-8 text-5xl lg:text-6xl">
             <a href="" className="text-gray-light-txt">
               {/* <img
                 src=""
@@ -199,9 +203,49 @@ const Sidebar = () => {
               /> */}
               Passport
             </a>
+
+            {/* OPEN & CLOSE NAV BTN */}
+            <div className="sm:hidden">
+              <button
+                className="text-gray-light-txt hover:text-gray-light-hvr bg-transparent p-1"
+                onClick={() => setState(!state)}
+              >
+                {state ? (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-6 w-6"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                ) : (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    className="w-6 h-6"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zM3 12a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm8.25 5.25a.75.75 0 01.75-.75h8.25a.75.75 0 010 1.5H12a.75.75 0 01-.75-.75z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                )}
+              </button>
+            </div>
           </div>
 
-          <div className="flex-1 flex flex-col h-full overflow-auto">
+          <div
+            className={`sm:flex flex-col flex-1 h-full overflow-auto ${
+              !state && 'hidden'
+            }`}
+          >
             {/* LOCATIONS */}
             <ul className="mt-4 px-4 text-sm font-medium flex-1">
               {navTop.map((item, idx) => (
