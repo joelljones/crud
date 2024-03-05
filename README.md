@@ -1,10 +1,10 @@
-# Passport Travel Group
+# Travelers
 
 A Facebook Groups clone - CRUD MERN app hosted on Railway - users can view, add, edit, & delete posts, replies/comments, & likes
 
 ![screenshot](screenshot.png)
 
-**Link to project:** https://passport-travel.netlify.app
+**Link to project:** https://travelers-group.netlify.app
 
 ## 🚀 How It's Made:
 

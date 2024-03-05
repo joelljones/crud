@@ -194,14 +194,14 @@ const Sidebar = () => {
       <nav className="mx-[-16px] sm:mx-0 sm:h-screen sm:w-[250px] lg:w-[336px] bg-gray-med space-y-8">
         <div className="flex flex-col h-full">
           {/* TITLE / LOGO */}
-          <div className="h-20 flex items-center justify-between px-8 text-5xl lg:text-6xl">
+          <div className="h-20 flex items-center justify-center px-8 text-5xl lg:text-6xl">
             <a href="" className="text-gray-light-txt">
               {/* <img
                 src=""
                 width={140}
                 className="mx-auto"
               /> */}
-              Passport
+              Travelers
             </a>
 
             {/* OPEN & CLOSE NAV BTN */}
