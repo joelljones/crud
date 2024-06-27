@@ -22,7 +22,8 @@ export default function CommentMenu({ post, comment }) {
     const updatedText = text;
 
     const res = await fetch(
-      import.meta.env.VITE_RAILWAY_URL +
+      // import.meta.env.VITE_RAILWAY_URL +
+      import.meta.env.VITE_RENDER_URL +
         '/api/posts/' +
         post._id +
         '/comments/' +
@@ -51,7 +52,8 @@ export default function CommentMenu({ post, comment }) {
   // HANDLE DELETE
   const handleDeleteClick = async () => {
     const res = await fetch(
-      import.meta.env.VITE_RAILWAY_URL +
+      // import.meta.env.VITE_RAILWAY_URL +
+      import.meta.env.VITE_RENDER_URL +
         '/api/posts/' +
         post._id +
         '/comments/' +

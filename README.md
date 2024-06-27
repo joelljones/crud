@@ -8,7 +8,7 @@ A Facebook Groups clone - CRUD MERN app hosted on Railway - users can view, add,
 
 ## 🚀 How It's Made:
 
-**Tech used:** [Vite](https://vitejs.dev), [React](https://react.dev), [Tailwind CSS](https://tailwindcss.com/), [Node.js](https://nodejs.org), [Express](https://expressjs.com), [MongoDB](https://www.mongodb.com), [Railway](https://railway.app)
+**Tech used:** [Vite](https://vitejs.dev), [React](https://react.dev), [Tailwind CSS](https://tailwindcss.com/), [Node.js](https://nodejs.org), [Express](https://expressjs.com), [MongoDB](https://www.mongodb.com), [Render](https://render.com)
 
 ## 🧞 Commands
 

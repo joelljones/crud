@@ -22,7 +22,8 @@ export default function PostMenu({ post }) {
     const updatedCaption = caption;
 
     const res = await fetch(
-      import.meta.env.VITE_RAILWAY_URL + '/api/posts/' + post._id,
+      // import.meta.env.VITE_RAILWAY_URL + '/api/posts/' + post._id,
+      import.meta.env.VITE_RENDER_URL + '/api/posts/' + post._id,
       {
         method: 'PATCH',
         body: JSON.stringify({ caption: updatedCaption }),
@@ -47,7 +48,8 @@ export default function PostMenu({ post }) {
   // HANDLE DELETE
   const handleDeleteClick = async () => {
     const res = await fetch(
-      import.meta.env.VITE_RAILWAY_URL + '/api/posts/' + post._id,
+      // import.meta.env.VITE_RAILWAY_URL + '/api/posts/' + post._id,
+      import.meta.env.VITE_RENDER_URL + '/api/posts/' + post._id,
       {
         method: 'DELETE',
       }

@@ -19,7 +19,8 @@ export default ({ post }) => {
     const updatedLikes = likes + 1;
 
     const res = await fetch(
-      import.meta.env.VITE_RAILWAY_URL + 'api/posts/' + post._id,
+      // import.meta.env.VITE_RAILWAY_URL + 'api/posts/' + post._id,
+      import.meta.env.VITE_RENDER_URL + 'api/posts/' + post._id,
       {
         method: 'PATCH',
         body: JSON.stringify({ likes: updatedLikes }),

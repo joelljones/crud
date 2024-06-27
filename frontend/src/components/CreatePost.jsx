@@ -23,7 +23,8 @@ export default function CreatePost() {
 
     const post = { caption, likes, comments };
 
-    const res = await fetch(import.meta.env.VITE_RAILWAY_URL + '/api/posts', {
+    // const res = await fetch(import.meta.env.VITE_RAILWAY_URL + '/api/posts', {
+    const res = await fetch(import.meta.env.VITE_RENDER_URL + '/api/posts', {
       method: 'POST',
       body: JSON.stringify(post),
       headers: {
